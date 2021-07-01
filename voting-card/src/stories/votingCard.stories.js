@@ -28,6 +28,12 @@ function increaseChoice(index){
 export default {
   title: 'VotingCard',
   component: VotingCard,
+  argTypes: {
+    state: {
+      options: ['open', 'closed'],
+      control: {type: 'radio'},
+    }
+  }
 };
 
 //👇 We create a “template” of how args map to rendering
@@ -36,15 +42,17 @@ const Template = (args) => <VotingCard {...args} />;
 export const FirstStory = Template.bind({});
 export const SecondStory = Template.bind({});
 
+FirstStory.storyName = "Segue o relator";
 FirstStory.args = {
-  title: "Não aguenta mais isso?",
+  title: "Segue o relator?",
   state: 'open',
   options: options.slice(0, 2),
   onChose: increaseChoice
 };
 
+SecondStory.storyName = "Continuamos amanhã";
 SecondStory.args = {
-  title: "Vai pedir pra sair?",
+  title: "Continuamos amanhã?",
   state: 'closed',
   options: options.slice(0, 3),
   onChose: increaseChoice

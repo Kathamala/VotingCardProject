@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <VotingCard title="Não aguenta mais isso?" state="open" options={ options } onChose={ increaseChoice }/>
+      <VotingCard title="Segue o relator?" state="open" options={ options } onChose={ increaseChoice }/>
     </div>
     
   );

@@ -34,10 +34,12 @@ const Template = (args) => <Result {...args} />;
 export const FirstStory = Template.bind({});
 export const SecondStory = Template.bind({});
 
+FirstStory.storyName = "Votação 1";
 FirstStory.args = {
     choices: options.slice(0, 2)
 };
 
+SecondStory.storyName = "Votação 2";
 SecondStory.args = {
     choices: options.slice(0, 3)
 };
