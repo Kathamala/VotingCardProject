@@ -12,7 +12,7 @@ import { Component, Input } from '@angular/core'
 
 export class VotingResultComponent implements OnInit {
     @Input() votes: { option: string; count: number; }[] = [];
-    total = 0;
+    private total = 0;
 
     ngOnInit() {
         for(var i=0; i<this.votes.length; i++){
