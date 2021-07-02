@@ -4,13 +4,13 @@
             {{ title }}
         </h1>
 
-        <div id="booth" v-if="mutState === 'open'">
+        <div id="booth" v-if="state === 'open'">
             <Booth 
                 :options="boothOptions" 
                 @select="select"    
             />
         </div>
-        <div v-else-if="mutState === 'closed'">
+        <div v-else-if="state === 'closed'">
             <Result :votes="votes"></Result>
         </div>
         <div v-else>
@@ -34,7 +34,7 @@
         },
         methods: {
             select(optionIndex){
-                this.mutState = "closed";
+                this.state = "closed";
                 this.votes[optionIndex].count++;
             }
         },
