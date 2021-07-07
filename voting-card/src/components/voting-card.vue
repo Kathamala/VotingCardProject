@@ -4,13 +4,13 @@
             {{ title }}
         </h1>
 
-        <div id="booth" v-if="state === 'open'">
+        <div id="booth" v-if="mutState === 'open'">
             <Booth 
                 :options="boothOptions" 
                 @select="select"    
             />
         </div>
-        <div v-else-if="state === 'closed'">
+        <div v-else-if="mutState === 'closed'">
             <Result :votes="votes"></Result>
         </div>
         <div v-else>
@@ -25,6 +25,11 @@
 
     export default {
         props: ['title', 'state', 'votes'],
+        watch: {
+            state: function(newVAl, oldVal){
+                this.mutState = this.state
+            }
+        },
         data: () => ({
             boothOptions: [],
             mutState: ''
@@ -34,7 +39,7 @@
         },
         methods: {
             select(optionIndex){
-                this.state = "closed";
+                this.mutState = "closed";
                 this.votes[optionIndex].count++;
             }
         },
