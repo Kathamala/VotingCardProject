@@ -48,7 +48,7 @@ export const SecondStory = Template.bind({});
 SecondStory.storyName = "Continuamos amanhã"
 SecondStory.args = {
   title: "Continuamos amanhã?",
-  state: 'open',
+  state: 'closed',
   votes:  [
     {
         option: 'Sim',
